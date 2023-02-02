@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+	  
+	  <ExcelDnaPackManagedDependencies>true</ExcelDnaPackManagedDependencies>
+	  <ExcelDnaPackNativeDependencies>true</ExcelDnaPackNativeDependencies>
+	  
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Library.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="ExcelDna.AddIn" Version="1.6.1-beta3" />
+	  <!--<PackageReference Include="ExcelDna.Interop" Version="15.0.0" />-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel">
+      <HintPath>lib\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop">
+      <HintPath>lib\Microsoft.Vbe.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="office">
+      <HintPath>lib\Office.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
