@@ -8,6 +8,10 @@ open System.Diagnostics
 let HelloDna name =
     "Hello " + name
 
+[<ExcelFunction(Description = "Test Excel Interop")>]
+let TestComVersion () =
+    let application = ExcelDnaUtil.Application :?> Microsoft.Office.Interop.Excel.Application
+    sprintf "%A" application.Version
     
 let private SetStatusHelloImpl () = 
       let application = ExcelDnaUtil.Application :?> Application
